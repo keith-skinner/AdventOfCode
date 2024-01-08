@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.25.1)
 
+# Make $PROJECT_NAME equal to the name of the parent folder
 cmake_path(GET CMAKE_CURRENT_SOURCE_DIR FILENAME ProjectName)   
 string(REPLACE " " "_" ProjectId ${ProjectName})
 project(${ProjectName})
@@ -27,10 +28,14 @@ target_link_options(
     $<$<CONFIG:DEBUG>:-fsanitize=address,undefined>
 )
 
+file(GLOB_RECURSE
+    ${PROJECT_NAME}_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/*.cpp
+)
 target_sources(
     ${PROJECT_NAME}
     PRIVATE
-    main.cpp
+    ${${PROJECT_NAME}_SOURCES}
 )
 
 file(

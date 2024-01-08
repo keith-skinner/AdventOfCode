@@ -7,5 +7,5 @@ static constexpr auto endl = '\n';
 
 int main()
 {
-    cout << "Hello, World" << endl;
+    cout << "Hello, Yall" << endl;
 }
