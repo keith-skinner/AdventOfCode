@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "/workspaces/AdventOfCode/Q1"
+    "cmake.sourceDirectory": "/workspaces/AdventOfCode/Q1",
+    "files.associations": {
+        "iosfwd": "cpp"
+    }
 }
